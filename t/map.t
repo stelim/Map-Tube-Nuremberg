@@ -1,3 +1,5 @@
+#!perl -T
+
 use v5.10;
 
 use strict;
