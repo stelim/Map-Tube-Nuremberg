@@ -13,19 +13,27 @@ version 0.01
 # DESCRIPTION
 It currently provides functionality to find the shortest route between
 the two given stations. The map contains currently only (U-Bahn) subway stations.
-=head1 CONSTRUCTOR
+
+# CONSTRUCTOR
+
     use Map::Tube::Nuremberg;
     my $tube = Map::Tube::Nuremberg->new;
-=head1 METHODS
-=head2 get\_shortest\_route(_START_, _END_)
+
+# METHODS
+
+## get\_shortest\_route(_START_, _END_)
+
 This method expects two parameters _START_ and _END_ station name.
 Station names are case insensitive. The station sequence from _START_
 to _END_ is returned.
+
     use Map::Tube::Nuremberg;
     my $tube = Map::Tube::Nuremberg->new;
-    my $route = $tube->get\_shortest\_route('Rathenauplatz', 'Hauptbahnhof');
-    print "Route: $route\\n";
-=head1 SEE ALSO
+    my $route = $tube->get_shortest_route('Rathenauplatz', 'Hauptbahnhof');
+    print "Route: $route\n";
+
+# SEE ALSO
+
 [Map::Tube](https://metacpan.org/pod/Map::Tube).
 
 
