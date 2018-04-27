@@ -17,6 +17,7 @@ has json => (is => 'ro', default => sub { return dist_file('Map-Tube-Nuremberg',
 with 'Map::Tube';
 
 =head1 DESCRIPTION
+
 It currently provides functionality to find the shortest route between
 the two given stations. The map contains currently only (U-Bahn) subway stations.
 
