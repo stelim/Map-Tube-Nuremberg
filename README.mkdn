@@ -8,9 +8,10 @@ Map::Tube::Nuremberg - Map::Tube::Nuremberg - interface to the Nuremberg U-Bahn 
 
 # VERSION
 
-version 0.02
+version 0.03
 
 # DESCRIPTION
+
 It currently provides functionality to find the shortest route between
 the two given stations. The map contains currently only (U-Bahn) subway stations.
 
