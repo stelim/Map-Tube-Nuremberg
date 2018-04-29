@@ -8,7 +8,7 @@ Map::Tube::Nuremberg - Map::Tube::Nuremberg - interface to the Nuremberg U-Bahn 
 
 # VERSION
 
-version 0.03
+version 0.04
 
 # DESCRIPTION
 
