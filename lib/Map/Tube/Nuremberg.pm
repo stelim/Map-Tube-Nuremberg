@@ -3,7 +3,7 @@ use strict;
 use warnings;
 
 
-our $VERSION = '0.05';
+our $VERSION = '0.06';
 
 # ABSTRACT: Map::Tube::Nuremberg - interface to the Nuremberg U-Bahn map
 
