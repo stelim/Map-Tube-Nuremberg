@@ -1,5 +1,5 @@
 [![Build Status](https://travis-ci.org/stelim/Map-Tube-Nuremberg.svg?branch=master)](https://travis-ci.org/stelim/Map-Tube-Nuremberg)
-[![Kwalitee status](http://cpants.cpanauthors.org/dist/Map-Tube-Nuremberg.png)](http://cpants.charsbar.org/dist/overview/Map-Tube-Nuremberg)
+[![Kwalitee status](https://cpants.cpanauthors.org/dist/Map-Tube-Nuremberg.png)](https://cpants.cpanauthors.org/dist/Map-Tube-Nuremberg)
 [![GitHub issues](https://img.shields.io/github/issues/stelim/Map-Tube-Nuremberg.svg)](https://github.com/stelim/Map-Tube-Nuremberg/issues)
 
 # NAME
@@ -8,7 +8,7 @@ Map::Tube::Nuremberg - Map::Tube::Nuremberg - interface to the Nuremberg U-Bahn 
 
 # VERSION
 
-version 0.06
+version 0.07
 
 # DESCRIPTION
 
@@ -35,11 +35,11 @@ to _END_ is returned.
 
 # SEE ALSO
 
-[Map::Tube](https://metacpan.org/pod/Map::Tube).
+[Map::Tube](https://metacpan.org/pod/Map%3A%3ATube).
 
 
 
-## Development
+# Development
 
 The distribution is contained in a Git repository, so simply clone the
 repository
