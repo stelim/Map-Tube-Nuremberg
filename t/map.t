@@ -27,7 +27,9 @@ diag $map->get_shortest_route('Opernhaus', 'Aufseßplatz');
 diag $map->get_shortest_route('Maxfeld','Rathenauplatz');
 diag $map->get_shortest_route('Maxfeld','Rennweg');
 diag $map->get_shortest_route('Hauptbahnhof','Kaulbachplatz');
-
+diag $map->get_shortest_route('Hardhöhe','Großreuth bei Schweinau');
+diag $map->get_shortest_route('Nordwestring','Langwasser Süd');
+diag $map->get_shortest_route('Opernhaus','Lorenzkirche');
 
 __DATA__
 Route 1|Hauptbahnhof|Opernhaus|Hauptbahnhof,Opernhaus
@@ -35,3 +37,6 @@ Route 2|Opernhaus|Aufseßplatz|Opernhaus,Hauptbahnhof,Aufseßplatz
 Route 3|Maxfeld|Rathenauplatz|Maxfeld,Rathenauplatz
 Route 4|Maxfeld|Rennweg|Maxfeld,Rathenauplatz,Rennweg
 Route 5|Hauptbahnhof|Kaulbachplatz|Hauptbahnhof,Wöhrder Wiese,Rathenauplatz,Maxfeld,Kaulbachplatz
+Route 6|Hardhöhe|Großreuth bei Schweinau|Hardhöhe,Klinikum Fürth,Stadthalle,Rathaus Fürth,Fürth Hauptbahnhof,Jakobinenstraße,Stadtgrenze,Muggenhof,Eberhardshof,Maximilianstraße,Bärenschanze,Gostenhof,Plärrer,Rothenburger Straße,Sündersbühl,Gustav-Adolf-Straße,Großreuth bei Schweinau
+Route 7|Nordwestring|Langwasser Süd|Nordwestring,Klinikum Nord,Friedrich-Ebert-Platz,Kaulbachplatz,Maxfeld,Rathenauplatz,Wöhrder Wiese,Hauptbahnhof,Aufseßplatz,Maffeiplatz,Frankenstraße,Hasenbuck,Bauernfeindstraße,Messe,Langwasser Nord,Scharfreiterring,Langwasser Mitte,Gemeinschaftshaus,Langwasser Süd
+Route 8|Opernhaus|Lorenzkirche|Opernhaus,Hauptbahnhof,Lorenzkirche
