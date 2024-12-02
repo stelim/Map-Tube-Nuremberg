@@ -8,12 +8,16 @@ Map::Tube::Nuremberg - Map::Tube::Nuremberg - interface to the Nuremberg U-Bahn 
 
 # VERSION
 
-version 0.07
+version 0.08
 
 # DESCRIPTION
 
 It currently provides functionality to find the shortest route between
 the two given stations. The map contains currently only (U-Bahn) subway stations.
+
+Hint: 
+ID in JSON-File is VGN-Kennung as used in https://opendata.vag.de/dataset/haltestellen-id-geodaten. 
+If Station-ID is not unique, the VGN-Kennung for U-Bahn is used.
 
 # CONSTRUCTOR
 
