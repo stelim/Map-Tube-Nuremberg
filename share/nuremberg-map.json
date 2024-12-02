@@ -61,7 +61,13 @@
                 "id": "0654",
                 "line": "U3:13",
                 "name": "Gustav-Adolf-Straße",
-                "link": "1120"
+                "link": "1120,1180"
+            },
+            {
+                "id":"1180",
+                "line": "U3:14",
+                "name": "Großreuth bei Schweinau",
+                "link":"0654"
             },
             {
                 "id": "1391",
