@@ -1,0 +1,89 @@
+name: CI
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+  workflow_dispatch:
+  schedule:
+    # Wöchentlich, damit Brüche durch neue Versionen der Abhängigkeiten auffallen
+    - cron: "17 4 * * 1"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  dist:
+    name: Distribution bauen (Dist::Zilla)
+    runs-on: ubuntu-latest
+    container:
+      image: perldocker/perl-tester:5.42
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Expat-Bibliothek für XML::Parser installieren
+        run: apt-get update && apt-get install -y --no-install-recommends libexpat1-dev
+
+      - name: Abhängigkeiten der Autorenwerkzeuge installieren
+        run: dzil authordeps --missing | cpanm --notest
+
+      - name: Abhängigkeiten der Distribution installieren
+        run: dzil listdeps --missing | cpanm --notest
+
+      - name: Distribution bauen
+        run: dzil build
+
+      - name: Tests in der gebauten Distribution
+        run: dzil test
+
+      - name: Tarball bereitstellen
+        uses: actions/upload-artifact@v4
+        with:
+          name: dist
+          path: Map-Tube-Nuremberg-*.tar.gz
+          if-no-files-found: error
+          retention-days: 14
+
+  test:
+    name: Tests mit Perl ${{ matrix.perl }}
+    needs: dist
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        perl: ["5.14", "5.36", "5.38", "5.40", "5.42"]
+    steps:
+      - name: Tarball holen
+        uses: actions/download-artifact@v4
+        with:
+          name: dist
+
+      - name: Tarball entpacken
+        run: |
+          mkdir dist
+          tar -xzf Map-Tube-Nuremberg-*.tar.gz --strip-components=1 -C dist
+
+      - name: Expat-Bibliothek für XML::Parser installieren
+        run: sudo apt-get update && sudo apt-get install -y --no-install-recommends libexpat1-dev
+
+      - name: Perl ${{ matrix.perl }} einrichten
+        uses: shogo82148/actions-setup-perl@v1
+        with:
+          perl-version: ${{ matrix.perl }}
+
+      - name: Deklarierte Abhängigkeiten installieren
+        working-directory: dist
+        run: cpanm --notest --installdeps .
+
+      - name: Bauen und testen wie ein CPAN-Smoker
+        working-directory: dist
+        env:
+          AUTOMATED_TESTING: 1
+        run: |
+          perl Makefile.PL
+          make
+          make test
