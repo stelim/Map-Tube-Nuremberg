@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/stelim/Map-Tube-Nuremberg.svg?branch=master)](https://travis-ci.org/stelim/Map-Tube-Nuremberg)
+[![Actions Status](https://github.com/stelim/Map-Tube-Nuremberg/actions/workflows/ci.yml/badge.svg)](https://github.com/stelim/Map-Tube-Nuremberg/actions)
 [![Kwalitee status](https://cpants.cpanauthors.org/dist/Map-Tube-Nuremberg.png)](https://cpants.cpanauthors.org/dist/Map-Tube-Nuremberg)
 [![GitHub issues](https://img.shields.io/github/issues/stelim/Map-Tube-Nuremberg.svg)](https://github.com/stelim/Map-Tube-Nuremberg/issues)
 
