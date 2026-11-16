@@ -25,6 +25,9 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: Expat-Bibliothek für XML::Parser installieren
+        run: apt-get update && apt-get install -y --no-install-recommends libexpat1-dev
+
       - name: Abhängigkeiten der Autorenwerkzeuge installieren
         run: dzil authordeps --missing | cpanm --notest
 
@@ -63,6 +66,9 @@ jobs:
         run: |
           mkdir dist
           tar -xzf Map-Tube-Nuremberg-*.tar.gz --strip-components=1 -C dist
+
+      - name: Expat-Bibliothek für XML::Parser installieren
+        run: sudo apt-get update && sudo apt-get install -y --no-install-recommends libexpat1-dev
 
       - name: Perl ${{ matrix.perl }} einrichten
         uses: shogo82148/actions-setup-perl@v1
